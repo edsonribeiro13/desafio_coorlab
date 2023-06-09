@@ -1,5 +1,5 @@
 <template>
-  <v-container style="padding: 0;" fluid>
+  <v-container style="padding: 0" fluid>
     <div class="title">
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand class="ml-2">
@@ -7,44 +7,41 @@
         </b-navbar-brand>
       </b-navbar>
     </div>
-    <v-row no-gutters style="height: 100%;">
+    <v-row no-gutters style="height: 100%">
       <filter-card></filter-card>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import {
-  BNavbar,
-  BNavbarBrand,
-} from 'bootstrap-vue'
-import FilterCard from './FilterCard.vue'
+import { BNavbar, BNavbarBrand } from "bootstrap-vue";
+import FilterCard from "./FilterCard.vue";
 
 export default {
   components: {
     BNavbar,
     BNavbarBrand,
-    FilterCard
+    FilterCard,
   },
   data() {
-    const appName = ''
+    const appName = "";
 
     return {
       appName,
-    }
+    };
   },
   created() {
     // Implemente aqui o GET dos dados da API REST
     // para que isso ocorra na inicialização da pagina
-    this.appName = 'Melhor Frete'
+    this.appName = "Melhor Frete";
   },
   methods: {
     // Implemente aqui os metodos utilizados na pagina
     methodFoo() {
-      console.log(this.appName)
+      console.log(this.appName);
     },
   },
-}
+};
 </script>
 
 <style scoped>

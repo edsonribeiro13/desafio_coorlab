@@ -57,6 +57,8 @@ Do ponto de vista de tecnologia utilizada para implementação, a unica exigênc
 
 Para facilitar a resolução do desafio, deixamos uma parte do projeto já montado para você. No diretório "code" deste repositório você terá o esqueleto do projeto já montado.
 
+Antes de rodar os comandos é preciso copiar e renomear o arquivo `.env.example copy` para `.env.local`
+
 Utilize os seguintes comandos para rodar a página do desafio.
 
 ```

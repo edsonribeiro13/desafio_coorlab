@@ -13,6 +13,7 @@
         <v-form>
           <v-col style="padding-inline: 0" cols="12">Destino</v-col>
           <v-select
+            :items="arrayCities"
             background-color="white"
             filled
             outlined
@@ -33,6 +34,34 @@
     </v-row>
   </v-container>
 </template>
+
+<script>
+import retrieveCities from '../server/handlers/retrieveCities'
+export default {
+  data() {
+    return {
+      arrayCities: []
+    }
+  },
+
+  created() {
+    this.fillCities()
+  },
+
+  methods: {
+    fillCities() {
+      const citiesSet = new Set()
+      retrieveCities().then(res => {
+        res.forEach(company => {
+          citiesSet.add(company.city)
+        })
+
+        this.arrayCities = Array.from(citiesSet)
+      })
+    }
+  }
+}
+</script>
 
 <style>
 @import "../assets/default.css";

@@ -1,0 +1,25 @@
+.row-default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 36%;
+}
+
+.row-title-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 5%;
+}
+
+.filter-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #efefee;
+}
+
+.column-btn {
+    display: flex;
+    justify-content: center;
+}

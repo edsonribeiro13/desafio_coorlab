@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <BestTransport/>
-  </div>
+  <v-app id="app">
+    <v-layout fill-height>
+      <BestTransport/>
+    </v-layout>
+  </v-app>
 </template>
 
 <script>

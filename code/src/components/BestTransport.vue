@@ -1,12 +1,16 @@
 <template>
-  <div class="title">
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand class="ml-2">
-        <b>{{ appName }}</b>
-      </b-navbar-brand>
-    </b-navbar>
-  </div>
-
+  <v-container style="padding: 0;" fluid>
+    <div class="title">
+      <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar-brand class="ml-2">
+          <b>{{ appName }}</b>
+        </b-navbar-brand>
+      </b-navbar>
+    </div>
+    <v-row no-gutters style="height: 100%;">
+      <filter-card></filter-card>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -14,11 +18,13 @@ import {
   BNavbar,
   BNavbarBrand,
 } from 'bootstrap-vue'
+import FilterCard from './FilterCard.vue'
 
 export default {
   components: {
     BNavbar,
     BNavbarBrand,
+    FilterCard
   },
   data() {
     const appName = ''

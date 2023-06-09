@@ -19,7 +19,33 @@
   background-color: #efefee;
 }
 
+.position-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .column-btn {
   display: flex;
   justify-content: center;
+}
+
+.column-first-icon {
+  background-color: #bdd1d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.column-second-icon {
+  background-color: #90b4c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.columns-best-price {
+  padding-inline: 4px;
 }

@@ -4,7 +4,7 @@
       <v-col style="margin-left: -10px" cols="1">
         <v-icon x-large>mdi-map-clock-outline</v-icon>
       </v-col>
-      <v-col style="margin-left: -12px" cols="9">
+      <v-col style="padding-left: 4px" cols="9">
         <span style="font-size: x-large">Insira o destino e o peso</span>
       </v-col>
     </v-row>

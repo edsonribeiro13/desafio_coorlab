@@ -7,8 +7,9 @@
         </b-navbar-brand>
       </b-navbar>
     </div>
-    <v-row no-gutters style="height: 100%">
-      <filter-card></filter-card>
+    <v-row class="position-container" no-gutters style="height: 90%">
+      <filter-card style="max-width: 45%; min-width: 25rem"></filter-card>
+      <card-result style="width: 50%"></card-result>
     </v-row>
   </v-container>
 </template>
@@ -16,12 +17,14 @@
 <script>
 import { BNavbar, BNavbarBrand } from "bootstrap-vue";
 import FilterCard from "./FilterCard.vue";
+import CardResult from "./CardResult.vue";
 
 export default {
   components: {
     BNavbar,
     BNavbarBrand,
     FilterCard,
+    CardResult,
   },
   data() {
     const appName = "";

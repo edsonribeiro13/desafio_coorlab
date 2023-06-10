@@ -58,7 +58,9 @@
     </v-row>
     <v-row>
       <v-col class="column-btn" style="padding: 0" cols="12">
-        <v-btn @click="() => (hasFilter = false)" style="background-color: #90b4c6"
+        <v-btn
+          @click="() => (hasFilter = false)"
+          style="background-color: #90b4c6"
           >Limpar</v-btn
         >
       </v-col>

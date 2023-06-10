@@ -71,9 +71,13 @@ export default {
     },
 
     getFreight() {
-      getPossibleFreight(this.citySelected).then((res) => {
-        this.$emit("fillCardResult", res, parseFloat(this.weigth));
-      });
+      if (!this.citySelected || !this.weigth) {
+        this.$emit("noEmptyFilter");
+      } else {
+        getPossibleFreight(this.citySelected).then((res) => {
+          this.$emit("fillCardResult", res, parseFloat(this.weigth));
+        });
+      }
     },
   },
 };

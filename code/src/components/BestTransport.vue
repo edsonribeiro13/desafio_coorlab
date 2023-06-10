@@ -10,6 +10,7 @@
     <v-row class="position-container" no-gutters style="height: 90%">
       <filter-card
         @fillCardResult="fillCardResult"
+        @noEmptyFilter="() => (emptyField = true)"
         style="max-width: 45%; min-width: 25rem"
       ></filter-card>
       <card-result
@@ -19,6 +20,12 @@
         style="width: 50%"
       ></card-result>
     </v-row>
+    <v-dialog max-width="400px" v-model="emptyField">
+      <dialog-message
+        message="Insira valores para realizar a analíse"
+        @closeDialog="emptyField = false"
+      ></dialog-message>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -26,6 +33,7 @@
 import { BNavbar, BNavbarBrand } from "bootstrap-vue";
 import FilterCard from "./FilterCard.vue";
 import CardResult from "./CardResult.vue";
+import DialogMessage from "./dialogMessage.vue";
 
 export default {
   components: {
@@ -33,6 +41,7 @@ export default {
     BNavbarBrand,
     FilterCard,
     CardResult,
+    DialogMessage,
   },
   data() {
     const appName = "";
@@ -49,6 +58,7 @@ export default {
         hour: "",
         price: "",
       },
+      emptyField: false,
     };
   },
   created() {
@@ -74,11 +84,15 @@ export default {
         }
       }
 
-      let bestPriceTotal = bestPrice[priceField].split(" ")
-      bestPriceTotal = this.transformValueToCurrentLocal(parseFloat(bestPriceTotal[1]) * weigth)
+      let bestPriceTotal = bestPrice[priceField].split(" ");
+      bestPriceTotal = this.transformValueToCurrentLocal(
+        parseFloat(bestPriceTotal[1]) * weigth
+      );
 
-      let bestTimeTotal = bestTime[priceField].split(" ")
-      bestTimeTotal = this.transformValueToCurrentLocal(parseFloat(bestTimeTotal[1]) * weigth)
+      let bestTimeTotal = bestTime[priceField].split(" ");
+      bestTimeTotal = this.transformValueToCurrentLocal(
+        parseFloat(bestTimeTotal[1]) * weigth
+      );
 
       this.bestPriceCompany = {
         name: bestPrice.name,
@@ -96,12 +110,12 @@ export default {
     },
 
     transformValueToCurrentLocal(value) {
-      return value.toLocaleString('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-        minimumFractionDigits: 2
-      })
-    }
+      return value.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+        minimumFractionDigits: 2,
+      });
+    },
   },
 };
 </script>

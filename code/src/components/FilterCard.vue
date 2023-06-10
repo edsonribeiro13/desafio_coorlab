@@ -14,6 +14,7 @@
           <v-col style="padding-inline: 0" cols="12">Destino</v-col>
           <v-select
             :items="arrayCities"
+            v-model="citySelected"
             background-color="white"
             filled
             outlined
@@ -22,13 +23,19 @@
           <v-col style="padding-inline: 0" cols="12">Peso</v-col>
           <v-text-field
             background-color="white"
+            suffix="kg"
+            type="number"
+            hide-spin-buttons
             filled
             outlined
+            v-model="weigth"
             placeholder="Peso da carga em KG"
           ></v-text-field>
         </v-form>
         <v-col class="column-btn" style="padding: 0" cols="12">
-          <v-btn style="background-color: #90b4c6">Analisar</v-btn>
+          <v-btn @click="getFreight()" style="background-color: #90b4c6"
+            >Analisar</v-btn
+          >
         </v-col>
       </v-col>
     </v-row>
@@ -36,31 +43,40 @@
 </template>
 
 <script>
-import retrieveCities from '../server/handlers/retrieveCities'
+import retrieveCities from "@/server/handlers/retrieveCities";
+import getPossibleFreight from "@/server/handlers/getPossibleFreight";
 export default {
   data() {
     return {
-      arrayCities: []
-    }
+      arrayCities: [],
+      citySelected: null,
+      weigth: "",
+    };
   },
 
   created() {
-    this.fillCities()
+    this.fillCities();
   },
 
   methods: {
     fillCities() {
-      const citiesSet = new Set()
-      retrieveCities().then(res => {
-        res.forEach(company => {
-          citiesSet.add(company.city)
-        })
+      const citiesSet = new Set();
+      retrieveCities().then((res) => {
+        res.forEach((company) => {
+          citiesSet.add(company.city);
+        });
 
-        this.arrayCities = Array.from(citiesSet)
-      })
-    }
-  }
-}
+        this.arrayCities = Array.from(citiesSet);
+      });
+    },
+
+    getFreight() {
+      getPossibleFreight(this.citySelected).then((res) => {
+        this.$emit("fillCardResult", res, parseFloat(this.weigth));
+      });
+    },
+  },
+};
 </script>
 
 <style>

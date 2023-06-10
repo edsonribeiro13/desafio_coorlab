@@ -44,17 +44,24 @@
         <v-col
           style="padding-inline: 4px; padding-top: 0px; padding-bottom: 2px"
           cols="12"
-          >Transportadora: {{ bestTymeCompany.name }}</v-col
+          >Transportadora: {{ bestTimeCompany.name }}</v-col
         >
         <v-col style="padding-inline: 4px; padding-top: 0px" cols="12"
-          >Tempo estimado: {{ bestTymeCompany.hour }}</v-col
+          >Tempo estimado: {{ bestTimeCompany.hour }}</v-col
         >
       </v-card>
       <v-spacer style="max-width: 4px"></v-spacer>
       <v-card flat color="#ececee" max-width="25%">
         <v-col cols="12">Preço</v-col>
-        <span style="padding-left: 16px">{{ bestTymeCompany.price }}</span>
+        <span style="padding-left: 16px">{{ bestTimeCompany.price }}</span>
       </v-card>
+    </v-row>
+    <v-row>
+      <v-col class="column-btn" style="padding: 0" cols="12">
+        <v-btn @click="() => (hasFilter = false)" style="background-color: #90b4c6"
+          >Limpar</v-btn
+        >
+      </v-col>
     </v-row>
   </v-container>
   <v-container v-else fluid class="position-container">
@@ -69,17 +76,15 @@ export default {
   data() {
     return {
       hasFilter: false,
-      bestPriceCompany: {
-        name: " ",
-        hour: " ",
-        price: " ",
-      },
-      bestTymeCompany: {
-        name: " ",
-        hour: " ",
-        price: " ",
-      },
     };
+  },
+  props: {
+    bestPriceCompany: {
+      type: Object,
+    },
+    bestTimeCompany: {
+      type: Object,
+    },
   },
 };
 </script>

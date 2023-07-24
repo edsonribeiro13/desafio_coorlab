@@ -1,11 +1,3 @@
-# Desafio CoorLab
-Olá DEV, pronto para participar do nosso processo seletivo?
-
-## Requisitos
-- Noções de programação web
-- Javascript
-- HTML
-
 ## Desafio
 Uma empresa estabelecida em Campinas busca assistência para determinar a opção de transportadora mais adequada, levando em consideração a cidade de destino e o prazo de entrega. A equipe de logística realiza o registro de todas as cotações de frete no sistema de gestão logística da empresa. Por sorte, esse sistema é equipado com uma API REST que disponibiliza de forma estruturada todos os dados coletados das cotações de frete. Tais informações estão formatadas da seguinte maneira:
 
@@ -118,26 +110,6 @@ Keep-Alive: timeout=5
   },
 ]
 ```
-
-## Avaliação
-O que vamos avaliar:
-- Atenção aos requisitos do projeto.
-- Atenção as instruções que fornecemos.
-- Lógica.
-- Qualidade.
-- Manutenabilidade.
-- Organização.
-- Boas práticas.
-
-## Instruções
-Siga os seguintes passos para a execução do desafio:
-1. Crie um repositório **público** no GitHub.
-2. Faça o **clone** do repositório que você acabou de criar.
-3. Extraia os arquivos do "desafio_coorlab.zip" na pasta que você fez o clone do repostório.
-4. Faça o primeiro **commit** com apenas estes arquivos no seu repositório, desta forma fica mais simples avaliar o que você implementou.
-5. Implemente o desafio.
-6. Faça o **commit** da sua implementação, inclusive se você quiser criar um commit diferente para cada parte que você implementou, é uma pratica que gostamos muito aqui na Coordene.
-7. Faça o **push** das suas alterações.
 8. Após concluir os passos anteriores, preencha este [formulário](https://airtable.com/shrTjtwUrw7I1CuxE).
 
 ### Importante
